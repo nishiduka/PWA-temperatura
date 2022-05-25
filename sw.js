@@ -24,7 +24,17 @@ self.addEventListener('install', (e) => {
 self.addEventListener('fetch', (fetchEvent) => {
   fetchEvent.respondWith(
     caches.match(fetchEvent.request).then((res) => {
-      return res || fetch(fetchEvent.request);
+      return (
+        res ||
+        fetch(fetchEvent.request).then(function (response) {
+          let responseClone = response.clone();
+
+          caches.open(`${CACHE_NAME}-request`).then(function (cache) {
+            cache.put(event.request, responseClone);
+          });
+          return response;
+        })
+      );
     })
   );
 });
