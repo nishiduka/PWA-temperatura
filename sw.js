@@ -1,10 +1,12 @@
-const CACHE_NAME = 'itapeshopping-v8';
+const CACHE_NAME = 'temp-agora';
 const assets = [
   '/',
   '/index.html',
   '/manifest.json',
   'js/instalar.js',
   '/js/app.js',
+  '/ing/icon.icon',
+  '/ing/icon.png  ',
   'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css',
 ];
 
@@ -21,7 +23,6 @@ self.addEventListener('install', (e) => {
 self.addEventListener('fetch', (fetchEvent) => {
   fetchEvent.respondWith(
     caches.match(fetchEvent.request).then((res) => {
-      console.log('res:::', res);
       return res || fetch(fetchEvent.request);
     })
   );
