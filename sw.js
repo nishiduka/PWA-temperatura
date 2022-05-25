@@ -1,12 +1,13 @@
+const URLBASE = 'https://me.nishiduka.dev/PWA-temperatura/';
 const CACHE_NAME = 'temp-agora1';
 const assets = [
-  window.location.href,
-  'index.html',
-  'manifest.json',
-  'js/instalar.js',
-  'js/app.js',
-  'img/icon.icon',
-  'img/icon.png  ',
+  URLBASE,
+  URLBASE + 'index.html',
+  URLBASE + 'manifest.json',
+  URLBASE + 'js/instalar.js',
+  URLBASE + 'js/app.js',
+  URLBASE + 'img/icon.icon',
+  URLBASE + 'img/icon.png  ',
   'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css',
 ];
 
