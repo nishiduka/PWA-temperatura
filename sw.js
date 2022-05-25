@@ -1,7 +1,7 @@
 const CACHE_NAME = 'itapeshopping-v8';
 const assets = [
   '/',
-  '/app.html',
+  '/index.html',
   '/manifest.json',
   'js/instalar.js',
   '/js/app.js',
@@ -21,6 +21,7 @@ self.addEventListener('install', (e) => {
 self.addEventListener('fetch', (fetchEvent) => {
   fetchEvent.respondWith(
     caches.match(fetchEvent.request).then((res) => {
+      console.log('res:::', res);
       return res || fetch(fetchEvent.request);
     })
   );
