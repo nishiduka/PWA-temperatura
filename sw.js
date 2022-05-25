@@ -6,7 +6,7 @@ const assets = [
   URLBASE + 'manifest.json',
   URLBASE + 'js/instalar.js',
   URLBASE + 'js/app.js',
-  URLBASE + 'img/icon.icon',
+  URLBASE + 'img/icon.ico',
   URLBASE + 'img/icon.png  ',
   'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css',
 ];
